@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import {
   Swords,
   HandFist,
@@ -19,6 +18,7 @@ import {
 import { useLanguage } from "@/lib/i18n/context";
 import AngularButton from "@/components/ui/AngularButton";
 import PhotoPlaceholder from "@/components/PhotoPlaceholder";
+import LogoBadge from "@/components/ui/LogoBadge";
 
 const CLASS_ICONS = [Swords, HandFist, Flame, HandGrab, Dumbbell, Baby];
 
@@ -67,20 +67,12 @@ export default function HomeContent() {
           </div>
 
           <div className="relative mx-auto w-full max-w-md lg:max-w-lg">
-            <div
-              className="pointer-events-none absolute -inset-10 opacity-40"
-              style={{
-                background:
-                  "radial-gradient(circle, rgba(220,38,38,0.35), transparent 70%)",
-              }}
-            />
-            <Image
+            <LogoBadge
               src="/logo.png"
               alt="APEX Fight Series logo"
               width={800}
               height={800}
               priority
-              className="relative w-full drop-shadow-[0_0_60px_rgba(220,38,38,0.25)]"
             />
           </div>
         </div>
