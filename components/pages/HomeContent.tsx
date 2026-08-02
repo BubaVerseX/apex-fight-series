@@ -19,6 +19,8 @@ import {
 import { useLanguage } from "@/lib/i18n/context";
 import AngularButton from "@/components/ui/AngularButton";
 import PhotoPlaceholder from "@/components/PhotoPlaceholder";
+import SectionReveal from "@/components/effects/SectionReveal";
+import { PulseGlow } from "@/components/effects/SceneBackground";
 
 const CLASS_ICONS = [Swords, HandFist, Flame, HandGrab, Dumbbell, Baby];
 
@@ -28,7 +30,8 @@ export default function HomeContent() {
   return (
     <div>
       {/* HERO */}
-      <section className="bg-grain relative flex min-h-[92vh] flex-col justify-center overflow-hidden bg-apex-black pb-24 pt-32">
+      <SectionReveal className="bg-grain relative flex min-h-[92vh] flex-col justify-center overflow-hidden pb-24 pt-32">
+        <PulseGlow className="left-1/2 top-0 -translate-x-1/2" />
         <div
           className="pointer-events-none absolute inset-0"
           style={{
@@ -86,10 +89,10 @@ export default function HomeContent() {
         </div>
 
         <div className="absolute bottom-0 left-0 right-0 h-16 bg-apex-black-soft clip-diagonal-up" />
-      </section>
+      </SectionReveal>
 
       {/* INTRO */}
-      <section className="bg-apex-black-soft py-20 sm:py-28">
+      <SectionReveal className="bg-apex-black-soft py-20 sm:py-28">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <PhotoPlaceholder label="Training Session" aspect="video" className="order-2 lg:order-1" />
           <div className="order-1 lg:order-2">
@@ -101,10 +104,10 @@ export default function HomeContent() {
             </p>
           </div>
         </div>
-      </section>
+      </SectionReveal>
 
       {/* CLASS HIGHLIGHTS */}
-      <section className="bg-apex-black py-20 sm:py-28">
+      <SectionReveal className="bg-apex-black py-20 sm:py-28">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <h2 className="font-display text-3xl text-white sm:text-4xl">
@@ -143,10 +146,10 @@ export default function HomeContent() {
             </Link>
           </div>
         </div>
-      </section>
+      </SectionReveal>
 
       {/* STATS STRIP */}
-      <section className="relative bg-apex-red py-14">
+      <SectionReveal className="relative bg-apex-red py-14">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-4 sm:px-6 lg:grid-cols-4 lg:px-8">
           {[
             { icon: Users, value: "500+", label: t.home.statsLabels.members },
@@ -165,10 +168,10 @@ export default function HomeContent() {
             </div>
           ))}
         </div>
-      </section>
+      </SectionReveal>
 
       {/* TESTIMONIAL */}
-      <section className="bg-apex-black-soft py-20 sm:py-28">
+      <SectionReveal className="bg-apex-black-soft py-20 sm:py-28">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <p className="font-heading text-sm uppercase tracking-[0.2em] text-apex-red-bright">
             {t.home.testimonialHeading}
@@ -184,10 +187,11 @@ export default function HomeContent() {
             {t.home.testimonialRole}
           </p>
         </div>
-      </section>
+      </SectionReveal>
 
       {/* BOTTOM CTA */}
-      <section className="bg-grain relative overflow-hidden bg-apex-black py-24 text-center">
+      <SectionReveal className="bg-grain relative overflow-hidden py-24 text-center">
+        <PulseGlow className="left-1/2 bottom-0 -translate-x-1/2 translate-y-1/3" />
         <div
           className="pointer-events-none absolute inset-0"
           style={{
@@ -204,7 +208,7 @@ export default function HomeContent() {
             <AngularButton href="/pricing">{t.home.ctaBottomButton}</AngularButton>
           </div>
         </div>
-      </section>
+      </SectionReveal>
     </div>
   );
 }

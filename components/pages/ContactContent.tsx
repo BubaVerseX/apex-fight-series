@@ -4,13 +4,16 @@ import { MapPin, Phone, Mail, Send, MapPinned } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/context";
 import AngularButton from "@/components/ui/AngularButton";
 import InstagramIcon from "@/components/icons/InstagramIcon";
+import SectionReveal from "@/components/effects/SectionReveal";
+import { PulseGlow } from "@/components/effects/SceneBackground";
 
 export default function ContactContent() {
   const { t } = useLanguage();
 
   return (
     <div>
-      <section className="bg-grain relative overflow-hidden bg-apex-black pb-16 pt-20 sm:pt-28">
+      <SectionReveal className="bg-grain relative overflow-hidden pb-16 pt-20 sm:pt-28">
+        <PulseGlow className="left-1/2 top-0 -translate-x-1/2" />
         <div
           className="pointer-events-none absolute inset-0"
           style={{
@@ -26,9 +29,9 @@ export default function ContactContent() {
             {t.contact.pageIntro}
           </p>
         </div>
-      </section>
+      </SectionReveal>
 
-      <section className="bg-apex-black-soft py-16 sm:py-20">
+      <SectionReveal className="bg-apex-black-soft py-16 sm:py-20">
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           {/* Contact info + map */}
           <div>
@@ -152,7 +155,7 @@ export default function ContactContent() {
             </form>
           </div>
         </div>
-      </section>
+      </SectionReveal>
     </div>
   );
 }
