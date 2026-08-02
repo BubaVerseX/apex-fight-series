@@ -4,8 +4,6 @@ import { Swords, HandFist, Flame, HandGrab, Dumbbell, Baby, Clock, TrendingUp } 
 import { useLanguage } from "@/lib/i18n/context";
 import PhotoPlaceholder from "@/components/PhotoPlaceholder";
 import AngularButton from "@/components/ui/AngularButton";
-import SectionReveal from "@/components/effects/SectionReveal";
-import { PulseGlow } from "@/components/effects/SceneBackground";
 
 const CLASS_ICONS = [Swords, HandFist, Flame, HandGrab, Dumbbell, Baby];
 
@@ -14,8 +12,7 @@ export default function ClassesContent() {
 
   return (
     <div>
-      <SectionReveal className="bg-grain relative overflow-hidden pb-20 pt-20 sm:pt-28">
-        <PulseGlow className="left-1/2 top-0 -translate-x-1/2" />
+      <section className="bg-grain relative overflow-hidden pb-20 pt-20 sm:pt-28">
         <div
           className="pointer-events-none absolute inset-0"
           style={{
@@ -34,9 +31,9 @@ export default function ClassesContent() {
             {t.classes.placeholderScheduleNote}
           </p>
         </div>
-      </SectionReveal>
+      </section>
 
-      <SectionReveal className="bg-apex-black-soft py-16 sm:py-20">
+      <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
             {t.classes.items.map((item, i) => {
@@ -83,7 +80,7 @@ export default function ClassesContent() {
             <AngularButton href="/pricing">{t.nav.pricing}</AngularButton>
           </div>
         </div>
-      </SectionReveal>
+      </section>
     </div>
   );
 }

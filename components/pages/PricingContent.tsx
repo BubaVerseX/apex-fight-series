@@ -3,16 +3,13 @@
 import { Check } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/context";
 import AngularButton from "@/components/ui/AngularButton";
-import SectionReveal from "@/components/effects/SectionReveal";
-import { PulseGlow } from "@/components/effects/SceneBackground";
 
 export default function PricingContent() {
   const { t } = useLanguage();
 
   return (
     <div>
-      <SectionReveal className="bg-grain relative overflow-hidden pb-16 pt-20 sm:pt-28">
-        <PulseGlow className="left-1/2 top-0 -translate-x-1/2" />
+      <section className="bg-grain relative overflow-hidden pb-16 pt-20 sm:pt-28">
         <div
           className="pointer-events-none absolute inset-0"
           style={{
@@ -28,9 +25,9 @@ export default function PricingContent() {
             {t.pricing.pageIntro}
           </p>
         </div>
-      </SectionReveal>
+      </section>
 
-      <SectionReveal className="bg-apex-black-soft py-16 sm:py-20">
+      <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             {t.pricing.tiers.map((tier) => (
@@ -82,7 +79,7 @@ export default function PricingContent() {
             {t.pricing.footNote}
           </p>
         </div>
-      </SectionReveal>
+      </section>
     </div>
   );
 }

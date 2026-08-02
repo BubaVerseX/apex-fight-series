@@ -4,7 +4,7 @@ import "./globals.css";
 import { LanguageProvider } from "@/lib/i18n/context";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import SceneBackground from "@/components/effects/SceneBackground";
+import HexGridBackground from "@/components/effects/HexGridBackground";
 
 const anton = Anton({
   variable: "--font-anton",
@@ -81,7 +81,7 @@ export default function RootLayout({
       className={`${anton.variable} ${oswald.variable} ${inter.variable} ${notoGeorgian.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-apex-black font-body text-apex-white">
-        <SceneBackground />
+        <HexGridBackground />
         <LanguageProvider>
           <Navbar />
           <main className="flex-1 pt-16">{children}</main>

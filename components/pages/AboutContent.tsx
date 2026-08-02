@@ -2,16 +2,13 @@
 
 import { useLanguage } from "@/lib/i18n/context";
 import PhotoPlaceholder from "@/components/PhotoPlaceholder";
-import SectionReveal from "@/components/effects/SectionReveal";
-import { PulseGlow } from "@/components/effects/SceneBackground";
 
 export default function AboutContent() {
   const { t } = useLanguage();
 
   return (
     <div>
-      <SectionReveal className="bg-grain relative overflow-hidden pb-16 pt-20 sm:pt-28">
-        <PulseGlow className="left-1/2 top-0 -translate-x-1/2" />
+      <section className="bg-grain relative overflow-hidden pb-16 pt-20 sm:pt-28">
         <div
           className="pointer-events-none absolute inset-0"
           style={{
@@ -24,10 +21,10 @@ export default function AboutContent() {
             {t.about.pageHeading}
           </h1>
         </div>
-      </SectionReveal>
+      </section>
 
       {/* STORY */}
-      <SectionReveal className="bg-apex-black-soft py-16 sm:py-24">
+      <section className="py-16 sm:py-24">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <div>
             <h2 className="slash-accent font-display text-3xl text-white sm:text-4xl">
@@ -39,10 +36,10 @@ export default function AboutContent() {
           </div>
           <PhotoPlaceholder label="Studio / Gym Floor" aspect="video" />
         </div>
-      </SectionReveal>
+      </section>
 
       {/* MISSION */}
-      <SectionReveal className="bg-apex-black py-16 sm:py-24">
+      <section className="py-16 sm:py-24">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           <PhotoPlaceholder label="Coaching / Sparring" aspect="video" className="order-2 lg:order-1" />
           <div className="order-1 lg:order-2">
@@ -54,10 +51,10 @@ export default function AboutContent() {
             </p>
           </div>
         </div>
-      </SectionReveal>
+      </section>
 
       {/* COACHES */}
-      <SectionReveal className="bg-apex-black-soft py-16 sm:py-24">
+      <section className="py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <h2 className="font-display text-3xl text-white sm:text-4xl">
@@ -88,7 +85,7 @@ export default function AboutContent() {
             ))}
           </div>
         </div>
-      </SectionReveal>
+      </section>
     </div>
   );
 }
