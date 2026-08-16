@@ -166,36 +166,42 @@ body {
   }
 }
 
-/* ---------- Logo glow badge ---------- */
+/* ---------- Offset duplicate logo mark ---------- */
 
-.logo-badge-glow {
-  inset: -65%;
-  border-radius: 9999px;
-  background: radial-gradient(
-    circle,
-    color-mix(in srgb, var(--color-apex-red) 35%, transparent),
-    transparent 70%
-  );
+.logo-mark-back {
+  z-index: 0;
+  transform: translate(9px, 9px);
+  opacity: 0.52;
 }
 
-.logo-badge-ring {
-  inset: -18%;
-  border-radius: 9999px;
-  border: 1px solid color-mix(in srgb, var(--color-apex-red) 40%, transparent);
-  animation: logo-badge-spin 12s linear infinite;
+@keyframes logo-mark-jolt {
+  0% {
+    transform: translate(9px, 9px);
+    opacity: 0.52;
+  }
+  35% {
+    transform: translate(15px, 15px);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(9px, 9px);
+    opacity: 0.52;
+  }
 }
 
-@keyframes logo-badge-spin {
-  from {
-    transform: rotate(0deg);
+@media (hover: hover) and (pointer: fine) {
+  .logo-mark:hover .logo-mark-back {
+    animation: logo-mark-jolt 260ms ease-out;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+.logo-mark-back.is-jolting {
+  animation: logo-mark-jolt 260ms ease-out;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .logo-badge-ring {
+  .logo-mark:hover .logo-mark-back,
+  .logo-mark-back.is-jolting {
     animation: none;
   }
 }

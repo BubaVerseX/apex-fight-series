@@ -18,7 +18,7 @@ import {
 import { useLanguage } from "@/lib/i18n/context";
 import AngularButton from "@/components/ui/AngularButton";
 import PhotoPlaceholder from "@/components/PhotoPlaceholder";
-import LogoBadge from "@/components/ui/LogoBadge";
+import LogoMark from "@/components/ui/LogoMark";
 
 const CLASS_ICONS = [Swords, HandFist, Flame, HandGrab, Dumbbell, Baby];
 
@@ -67,12 +67,15 @@ export default function HomeContent() {
           </div>
 
           <div className="relative mx-auto w-full max-w-md lg:max-w-lg">
-            <LogoBadge
+            {/* width/height capped at 600 so the 2x srcset (1200px) stays below
+                logo.png's native 1804px — at or above native size Next's WebP
+                encoder drops the alpha channel and flattens transparency to black */}
+            <LogoMark
               src="/logo.png"
               alt="APEX Fight Series logo"
-              width={800}
-              height={800}
-              priority
+              width={600}
+              height={600}
+              preload
             />
           </div>
         </div>
